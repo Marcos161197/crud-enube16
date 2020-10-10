@@ -19,7 +19,10 @@ mongoose.connect(dataBaseConfig.db, {
 )
 
 // Set up express js port
-const studentRoute = require('./routes/student.route')
+var appRoutes = require('./routes/app');
+var studentRoute = require('./routes/student.route')
+var teacherRoute = require('./routes/teacher.route');
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -34,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'dist/angular8-meanstack-angular-mat
 
 // RESTful API root
 app.use('/api', studentRoute)
+app.use('/api/teacher',teacherRoute)
 
 // PORT
 const port = process.env.PORT || 8000;

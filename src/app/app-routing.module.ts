@@ -1,3 +1,4 @@
+import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddStudentComponent } from './components/add-student/add-student.component';
@@ -8,7 +9,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'add-student' },
   { path: 'add-student', component: AddStudentComponent },
   { path: 'edit-student/:id', component: EditStudentComponent },
-  { path: 'students-list', component: StudentsListComponent }
+  { path: 'students-list', component: StudentsListComponent },
+  { path: 'add-teacher', component: AddTeacherComponent }
 ];
 
 @NgModule({

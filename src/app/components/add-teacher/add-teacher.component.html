@@ -1,52 +1,38 @@
 <!-- Title group  -->
 <div class="title-group">
-  <h1 class="mat-h1">Agregar Estudiante</h1>
+  <h1 class="mat-h1">Agregar Profesor</h1>
   <mat-divider fxFlex="1 0"></mat-divider>
 </div>
 
 <!-- Form -->
 <div class="inner-wrapper">
-  <form [formGroup]="studentForm" (ngSubmit)="submitStudentForm()" #resetStudentForm="ngForm" novalidate>
+  <form [formGroup]="teacherForm" (ngSubmit)="submitStudentForm()" #resetTeacherForm="ngForm" novalidate>
     <!-- Left block -->
     <mat-card>
       <div class="controlers-wrapper">
         <!-- Name -->
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Nombre del estudiante" formControlName="student_name">
-          <mat-error *ngIf="handleError('student_name', 'required')">
+          <input matInput placeholder="Nombre del estudiante" formControlName="teacher_name">
+          <mat-error *ngIf="handleError('teacher_name', 'required')">
             llenar campo<strong>.</strong>
           </mat-error>
         </mat-form-field>
          <!-- ap -->
          <mat-form-field class="example-full-width">
-          <input matInput placeholder="Apellido paterno" formControlName="student_app">
-          <mat-error *ngIf="handleError('student_app', 'required')">
+          <input matInput placeholder="Apellido paterno" formControlName="teacher_app">
+          <mat-error *ngIf="handleError('teacher_app', 'required')">
             llenar campo<strong>.</strong>
           </mat-error>
         </mat-form-field>
 
         <!-- am -->
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Apellido materno" formControlName="student_apm">
-          <mat-error *ngIf="handleError('student_apm', 'required')">
+          <input matInput placeholder="Apellido materno" formControlName="teacher_apm">
+          <mat-error *ngIf="handleError('teacher_apm', 'required')">
             llenar campo<strong>.</strong>
           </mat-error>
         </mat-form-field>
 
-
-
-        <!-- Section -->
-        <mat-form-field>
-          <mat-label>Section</mat-label>
-          <mat-select [(value)]="selected" formControlName="teacher">
-
-            <mat-option [value]="sectioinArray" *ngFor="let sectioinArray of SectioinArray">{{sectioinArray}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="handleError('teacher', 'required')">
-            Section is required
-          </mat-error>
-        </mat-form-field>
       </div>
     </mat-card>
 
@@ -56,8 +42,8 @@
 
          <!-- am -->
          <mat-form-field class="example-full-width">
-          <input matInput placeholder="dni" formControlName="student_dni">
-          <mat-error *ngIf="handleError('student_dni', 'required')">
+          <input matInput placeholder="dni" formControlName="teacher_dni">
+          <mat-error *ngIf="handleError('teacher_dni', 'required')">
             llenar campo<strong>.</strong>
           </mat-error>
         </mat-form-field>
@@ -75,3 +61,4 @@
     </mat-card>
   </form>
 </div>
+

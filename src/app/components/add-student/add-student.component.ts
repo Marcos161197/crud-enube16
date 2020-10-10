@@ -42,11 +42,12 @@ export class AddStudentComponent implements OnInit {
   submitBookForm() {
     this.studentForm = this.fb.group({
       student_name: ['', [Validators.required]],
-      student_email: ['', [Validators.required]],
-      section: ['', [Validators.required]],
-      subjects: [this.subjectArray],
-      dob: ['', [Validators.required]],
-      gender: ['Male']
+      student_app: ['', [Validators.required]],
+      student_apm: ['', [Validators.required]],
+      student_dni: ['', [Validators.required]],
+      teacher: ['', [Validators.required]],
+
+
     })
   }
 
@@ -70,7 +71,7 @@ export class AddStudentComponent implements OnInit {
     if (index >= 0) {
       this.subjectArray.splice(index, 1);
     }
-  }  
+  }
 
   /* Date */
   formatDate(e) {
@@ -78,12 +79,12 @@ export class AddStudentComponent implements OnInit {
     this.studentForm.get('dob').setValue(convertDate, {
       onlyself: true
     })
-  }  
+  }
 
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
     return this.studentForm.controls[controlName].hasError(errorName);
-  }  
+  }
 
   /* Submit book */
   submitStudentForm() {

@@ -1,6 +1,6 @@
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="header">
-  <div>Student Records</div>
+  <div>crud Enube</div>
   <span class="nav-tool-items">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
@@ -12,8 +12,13 @@
     [fixedTopGap]>
     <mat-nav-list>
       <a mat-list-item routerLinkActive="active" routerLink="/add-student">
-        <mat-icon>add</mat-icon> Add Student
+        <mat-icon>+</mat-icon> Agregar estudiante
       </a>
+
+      <a mat-list-item routerLinkActive="active" routerLink="/add-teacher">
+        <mat-icon>+</mat-icon> Agregar Profesor
+      </a>
+
       <a mat-list-item routerLinkActive="active" routerLink="/students-list">
         <mat-icon>format_list_bulleted</mat-icon> View Students
       </a>
